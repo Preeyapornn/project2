@@ -61,15 +61,18 @@ function removeFromCart(item) {
                 class="bg-transparent hover:bg-violet-500 text-violet-700 font-semibold hover:text-white py-2 px-4 border border-violet-500 hover:border-transparent rounded">
                 Add
               </button>
-              <button  @click="removeFromCart(item)"
-                class="bg-transparent hover:bg-violet-500 text-violet-700 font-semibold hover:text-white py-2 px-4 border border-violet-500 hover:border-transparent rounded">
-                Remove
-              </button>
+              
             </div>
           </li>
         </ul>
         <div>
-      <p> {{ cart }}</p>
+          <div v-for="item in cart" :key="item.id">
+      <p> {{ item }}</p>
+      <button  @click="removeFromCart(item)"
+                class="bg-transparent hover:bg-violet-500 text-violet-700 font-semibold hover:text-white py-2 px-4 border border-violet-500 hover:border-transparent rounded">
+                Remove
+              </button>
+            </div>
     </div>
       </div>
     </div>
